@@ -1,117 +1,36 @@
-public class NQueens {
-
-2 
-
-static int[] x;
-
-3 
-
-4 
-
-public static boolean place(int k, int i) {
-
-5 
-
-for (int j = 1; j < k; j++)
-
-6 
-
-if (x[j] == i || Math.abs(x[j] - i) == Math.abs(j - k))
-
-7 
-
-return false;
-
-8 
-
+public class NQueens 
+{
+ static int[] x;
+ public static boolean place(int k, int i) 
+{ 
+  for (int j = 1; j < k; j++) 
+   if (x[j] == i || Math.abs(x[j] - i) == Math.abs(j - k)) 
+    return false;
 return true;
-
-9 
-
 }
-
-10 
-
-11 
-
-public static void nqueens(int k, int n) {
-
-12 
-
-if (k > n) {
-
-13 
-
-for (int i = 1; i <= n; i++)
-
-14 
-
-System.out.print(x[i] + " ");
-
-15 
-
-System.out.println();
-
-16 
-
+public static void nqueens(int k, int n)
+{
+ if (k > n) {
+  for (int i = 1; i <= n; i++)
+   System.out.print(x[i] + " ");
+   System.out.println();
 }
-
-17 
-
-else
-
-18 
-
-for (int i = 1; i <= n; i++)
-
-19 
-
-if (place(k, i)) {
-
-20 
-
-x[k] = i;
-
-21 
-
-nqueens(k + 1, n);
-
-22 
-
+ else
+  for (int i = 1; i <= n; i++)
+   if (place(k, i)) 
+   {
+     x[k] = i;
+     nqueens(k + 1, n);
+   }
 }
-
-23 
-
-}
-
-24 
-
-25 
-
-public static void main(String[] args) {
-
-26 
-
-java.util.Scanner scanner = new java.util.Scanner(System.in);
-
-27 
-
-System.out.print("Enter number of queens: ");
-
-28 
-
-int n = scanner.nextInt();
-
-29 
-
-scanner.close();
-
-30 
-
-x = new int[n + 1];
-
-31 
-
-nqueens(1, n);
+public static void main(String[] args) 
+{
+ java.util.Scanner scanner = new java.util.Scanner(System.in);
+ System.out.print("Enter number of queens: ");
+ int n = scanner.nextInt();
+ scanner.close();
+ x = new int[n + 1];
+ nqueens(1, n);
 }
 }
+
