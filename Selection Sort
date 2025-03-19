@@ -1,0 +1,34 @@
+import java.util.*;
+class Selection
+{
+    void selectionSort(int a[])
+    {
+        int n=a.length;
+        for(int i=0;i<n-1;i++)
+        {
+            int min_idx=i;
+                for(int j=i+1;j<n;j++)
+                {
+                     if(a[j]<a[min_idx])
+                     {
+                          min_idx=j;
+                     }
+                     int temp=a[min_idx];
+                     a[min_idx]=a[i];
+                     a[i]=temp;
+                }
+        }
+    }
+    public static void main(String args[])
+    {
+        Selection obj=new Selection();
+        int a[]={45,78,23,12};
+        obj.selectionSort(a);
+        int n=a.length;
+        for(int i=0;i<n;i++)
+        {
+           System.out.println(a[i]);
+        }
+    }
+}       
+       
