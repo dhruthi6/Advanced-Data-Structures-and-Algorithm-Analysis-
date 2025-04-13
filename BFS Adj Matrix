@@ -38,7 +38,7 @@ public class BFSAdjMatrix
 			for(int j=0;j<v;j++)
 				graph.adj[i][j]=sc.nextInt();
 		System.out.println("enter starting vertex for BFS:");
-		int start=sc.nextInt();
+		int start=sc.nextInt()%v;
 		System.out.println("BFS traversal starting from vertex "+start+" : ");
 		graph.BFS(start);
 		sc.close();
